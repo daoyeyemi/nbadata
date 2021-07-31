@@ -67,9 +67,15 @@ sl.markdown(download_csv_file(data), unsafe_allow_html=True)
 #         'color': {'field': 'c', 'type': 'quantitative'},
 #     },
 # })
+
+"""
+    # Top 100 NBA Player Data in Points Per Game (PPG)
+"""
 def get_top_100(data):
-    data.PTS = pd.to_numeric(data.PTS, errors='coerce')
+    # data.PTS = pd.to_numeric(data.PTS, errors='coerce')
+    data['PTS'] = data['PTS'].astype(float)
     top100data = data.sort_values(by=['PTS'], ascending=False) 
+    top100data['PTS'] = data['PTS'].astype(str)
     top100data = top100data.head(100)
     sl.dataframe(top100data)
 
