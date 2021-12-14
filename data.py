@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import base64
 import altair as alt
-import html5lib
 
 """
     # NBA Statistics Data Science Project
