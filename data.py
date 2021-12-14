@@ -18,7 +18,7 @@ sl.sidebar.header('Data Filters')
 
 year_select = sl.sidebar.selectbox("Select the starting year of the season you'd like to explore:", year_list, key="a")
 
-data = pd.read_html("https://www.basketball-reference.com/leagues/NBA_" + str(year_select) + "_per_game.html", header=0)
+data = pd.read_html("https://www.basketball-reference.com/leagues/NBA_" + str(year_select) + "_per_game.html", flavor='html5lib')
 data = data[0].drop(['Rk'], axis=1)
 
 # showing values from team column
