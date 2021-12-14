@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import base64
 import altair as alt
+import html5lib
 
 """
     # NBA Statistics Data Science Project
@@ -18,7 +19,7 @@ sl.sidebar.header('Data Filters')
 
 year_select = sl.sidebar.selectbox("Select the starting year of the season you'd like to explore:", year_list, key="a")
 
-data = pd.read_html("https://www.basketball-reference.com/leagues/NBA_" + str(year_select) + "_per_game.html", flavor='html5lib')
+data = pd.read_html("https://www.basketball-reference.com/leagues/NBA_" + str(year_select) + "_per_game.html", flavor='bs4')
 data = data[0].drop(['Rk'], axis=1)
 
 # showing values from team column
