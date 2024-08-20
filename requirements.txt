@@ -3,3 +3,4 @@ pandas
 numpy
 altair
 html5lib
+beautifulsoup4
